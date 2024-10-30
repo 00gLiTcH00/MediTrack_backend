@@ -1,0 +1,18 @@
+spring:
+  devtools:
+    add-properties: false
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:database.db
+    username: "admin"
+    password: "admin"
+  jpa:
+    database-platform: "org.hibernate.community.dialect.SQLiteDialect"
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      jakarta:
+        persistence:
+          sharedCache:
+            mode: ALL
