@@ -2,11 +2,7 @@ package smartbits.junior.meditrack.Entities;
 
 import java.util.ArrayList;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,7 +21,8 @@ public class UserEntity {
     private int user_ID;
     
     private String user_name;
-    private String user_illness;
+
+    @ManyToMany
     private ArrayList<RecipeEntity> user_recipes;
 
 }

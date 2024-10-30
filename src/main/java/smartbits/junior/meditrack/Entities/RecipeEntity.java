@@ -2,15 +2,12 @@ package smartbits.junior.meditrack.Entities;
 
 import java.util.HashMap;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import smartbits.junior.meditrack.utils.HashMapConverter;
 
 @Getter
 @Setter
@@ -26,6 +23,8 @@ public class RecipeEntity {
 
     private String recipe_name;
     private String recipe_description;
-    private HashMap<PillEntity, Long> pills;
+
+    @Convert(converter = HashMapConverter.class)
+    private HashMap<PillEntity, Integer> pillsAndCount;
 
 }
