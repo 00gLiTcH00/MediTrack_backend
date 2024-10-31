@@ -26,7 +26,7 @@ public class UserController {
     }
 
     @GetMapping("/get_by_username/{username}")
-    public UserEntity getByUsername(String username) {
+    public UserEntity getByUsername(@PathVariable String username) {
         return userService.getByUsername(username);
     }
 
