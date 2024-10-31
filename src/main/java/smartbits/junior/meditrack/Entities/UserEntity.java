@@ -20,7 +20,7 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int user_ID;
     
-    private String user_name;
+    private String username;
 
     @ManyToMany
     private ArrayList<RecipeEntity> user_recipes;

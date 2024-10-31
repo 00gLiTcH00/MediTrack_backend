@@ -25,6 +25,11 @@ public class UserController {
         return userService.getUserById(id);
     }
 
+    @GetMapping("/get_by_username/{username}")
+    public UserEntity getByUsername(String username) {
+        return userService.getByUsername(username);
+    }
+
     @PostMapping("/create")
     public UserEntity createUser(@RequestBody UserEntity user) {
         return userService.createUser(user);

@@ -28,8 +28,8 @@ public class RecipeController {
 
     @PostMapping("/create")
     public RecipeEntity createRecipe(@RequestBody RecipeEntity recipe) {
-        if (recipe.getPills() == null) {
-            recipe.setPills(new HashMap<>());
+        if (recipe.getPillsAndCount() == null) {
+            recipe.setPillsAndCount(new HashMap<>());
         }
         return recipeService.createRecipe(recipe);
     }
@@ -37,8 +37,8 @@ public class RecipeController {
     @PutMapping("/update/{id}")
     public RecipeEntity updateRecipe(@PathVariable int id, @RequestBody RecipeEntity recipe) {
         recipe.setRecipe_ID(id);
-        if (recipe.getPills() == null) {
-            recipe.setPills(new HashMap<>());
+        if (recipe.getPillsAndCount() == null) {
+            recipe.setPillsAndCount(new HashMap<>());
         }
         return recipeService.updateRecipe(recipe);
     }

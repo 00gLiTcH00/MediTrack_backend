@@ -33,4 +33,8 @@ public class UserService {
     public void deleteUser(int id) {
         userRepository.deleteById(id);
     }
+
+    public UserEntity getByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
 }

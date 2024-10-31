@@ -32,8 +32,6 @@
 		<pi4j.version>2.7.0</pi4j.version>
 	</properties>
 	<dependencies>
-
-
 		<!-- include Pi4J Core -->
 		<dependency>
 			<groupId>com.pi4j</groupId>
@@ -92,8 +90,6 @@
 			<groupId>org.hibernate.orm</groupId>
 			<artifactId>hibernate-community-dialects</artifactId>
 		</dependency>
-
-
 	</dependencies>
 
 	<build>
