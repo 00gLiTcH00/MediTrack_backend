@@ -1,6 +1,7 @@
 package smartbits.junior.meditrack.Entities;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -23,6 +24,6 @@ public class UserEntity {
     private String username;
 
     @ManyToMany
-    private ArrayList<RecipeEntity> user_recipes;
+    private List<RecipeEntity> user_recipes;
 
 }

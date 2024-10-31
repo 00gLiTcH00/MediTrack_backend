@@ -1,5 +1,6 @@
 package smartbits.junior.meditrack.Services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,11 @@ public class UserService {
         return userRepository.findById(id).orElse(null);
     }
 
-    public UserEntity createUser(UserEntity user) {
-        return userRepository.save(user);
+    public UserEntity createUser(String user) {
+        UserEntity newUser = new UserEntity();
+        newUser.setUsername(user);
+        newUser.setUser_recipes(new ArrayList<>());
+        return userRepository.saveAndFlush(newUser);
     }
 
     public UserEntity updateUser(UserEntity user) {

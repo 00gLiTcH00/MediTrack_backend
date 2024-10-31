@@ -31,8 +31,8 @@ public class UserController {
     }
 
     @PostMapping("/create")
-    public UserEntity createUser(@RequestBody UserEntity user) {
-        return userService.createUser(user);
+    public UserEntity createUser(@RequestBody RegisterUser user) {
+        return userService.createUser(user.username());
     }
 
     @PutMapping("/update/{id}")
@@ -49,5 +49,9 @@ public class UserController {
     @GetMapping("/test_req")
     public String TestRequest() {
         return "TEST REQUEST USER";
+    }
+
+    public record RegisterUser(String username){
+
     }
 }
